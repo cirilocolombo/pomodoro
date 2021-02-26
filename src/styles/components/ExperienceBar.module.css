@@ -1,0 +1,33 @@
+.experienceBar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.experienceBar span {
+  font-size: 1rem;
+}
+
+/* sinal de maior faz com que pegue somente as divs que estão no primeiro nível (filho) dentro da experienceBar */
+.experienceBar > div {
+  flex: 1;
+  height: 4px;
+  border-radius: 4px;
+  background: var(--gray-line);
+  margin: 0 1.5rem;
+  position: relative;
+}
+
+/* Div dentro da div (neto) */
+.experienceBar > div > div {
+  height: 4px;
+  border-radius: 4px;
+  background: var(--green);
+}
+
+span.currentExperience {
+  position: absolute;
+  top: 12px;
+  transform: translateX(-50%); /* desloca o span para o meio do componente anterior */
+  white-space: nowrap; /* Faz com que o texto não quebre quando passar da largura do componente anterior */
+}
